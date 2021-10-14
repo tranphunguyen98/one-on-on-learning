@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:one_on_one_learning/features/register/pages/register_page.dart';
+import 'package:one_on_one_learning/features/forgot_password/pages/forgot_password_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: RegisterPage(),
+      home: ForgotPasswordPage(),
     );
   }
 }
