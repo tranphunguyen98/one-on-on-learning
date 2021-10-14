@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'colors.dart';
 
-final kFontRegular = TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w400, color: kBlackColor);
+final kFontRegular = TextStyle(
+    fontFamily: 'Poppins', fontWeight: FontWeight.w400, color: kBlackColor);
 
 final kFontMedium = TextStyle(
   fontFamily: 'Poppins',
@@ -40,6 +41,7 @@ final kFontRegularWhite_14_80 = kFontRegularWhite.copyWith(
 
 final kFontRegularBlue = kFontRegular.copyWith(color: kBlueColor);
 final kFontRegularBlue_12 = kFontRegularBlue.copyWith(fontSize: 12);
+final kFontRegularBlue_14 = kFontRegularBlue.copyWith(fontSize: 14);
 
 final kFontRegularPrimary = kFontRegular.copyWith(color: kPrimaryColor);
 final kFontRegularPrimary_14 = kFontRegularPrimary.copyWith(fontSize: 14);
@@ -93,10 +95,10 @@ final kFontSemiboldWhite_10 = kFontSemiboldWhite.copyWith(fontSize: 10);
 final kFontSemiboldWhite_16 = kFontSemiboldWhite.copyWith(fontSize: 16);
 final kFontSemiboldWhite_18 = kFontSemiboldWhite.copyWith(fontSize: 18);
 
-// final kFontSemiboldBlack = kFontSemibold.copyWith(color: kColorBlack2);
-// final kFontSemiboldBlack_14 = kFontSemiboldBlack.copyWith(fontSize: 14);
-// final kFontSemiboldBlack_16 = kFontSemiboldBlack.copyWith(fontSize: 16);
-// final kFontSemiboldBlack_22 = kFontSemiboldBlack.copyWith(fontSize: 22);
+final kFontSemiboldBlack = kFontSemibold.copyWith(color: kBlackColor);
+final kFontSemiboldBlack_14 = kFontSemiboldBlack.copyWith(fontSize: 14);
+final kFontSemiboldBlack_16 = kFontSemiboldBlack.copyWith(fontSize: 16);
+final kFontSemiboldBlack_22 = kFontSemiboldBlack.copyWith(fontSize: 22);
 //
 // final kFontSemiboldGray = kFontSemibold.copyWith(color: kColorGray1_50);
 // final kFontSemiboldGray_16 = kFontSemiboldGray.copyWith(fontSize: 16);

@@ -19,7 +19,7 @@ class WidgetTeacherItem extends StatelessWidget {
             Row(
               children: [
                 CircleAvatar(
-                  radius: 24,
+                  radius: 28,
                   backgroundImage: NetworkImage(
                     teacherModel.imageUrl,
                   ),
@@ -40,7 +40,7 @@ class WidgetTeacherItem extends StatelessWidget {
                                 teacherModel.name,
                                 style: kFontRegularDefault_16,
                               ),
-                              SizedBox(height: 8),
+                              SizedBox(height: 4),
                               RatingBarIndicator(
                                 rating: teacherModel.star,
                                 itemBuilder: (context, index) => Icon(
