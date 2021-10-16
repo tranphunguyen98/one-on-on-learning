@@ -3,8 +3,9 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:one_on_one_learning/core/core.dart';
 import 'package:one_on_one_learning/model/teacher.dart';
 
-class WidgetTeacherItem extends StatelessWidget {
-  const WidgetTeacherItem({Key? key, required this.teacherModel}) : super(key: key);
+class WidgetHomeTeacherItem extends StatelessWidget {
+  const WidgetHomeTeacherItem({Key? key, required this.teacherModel})
+      : super(key: key);
 
   final TeacherModel teacherModel;
 
@@ -60,8 +61,12 @@ class WidgetTeacherItem extends StatelessWidget {
                               padding: EdgeInsets.zero,
                               splashRadius: 24,
                               icon: Icon(
-                                teacherModel.isFavorite ? Icons.favorite : Icons.favorite_border,
-                                color: teacherModel.isFavorite ? kRedColor : kPrimaryColor,
+                                teacherModel.isFavorite
+                                    ? Icons.favorite
+                                    : Icons.favorite_border,
+                                color: teacherModel.isFavorite
+                                    ? kRedColor
+                                    : kPrimaryColor,
                                 size: 24,
                               ),
                               onPressed: () {},
@@ -85,7 +90,8 @@ class WidgetTeacherItem extends StatelessWidget {
                               ),
                             );
                           },
-                          separatorBuilder: (context, index) => SizedBox(width: 4),
+                          separatorBuilder: (context, index) =>
+                              SizedBox(width: 4),
                         ),
                       ),
                     ],

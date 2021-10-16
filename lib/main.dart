@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:one_on_one_learning/features/forgot_password/pages/forgot_password_page.dart';
+
+import 'features/teacher_list/pages/teacher_list_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: ForgotPasswordPage(),
+      home: TeacherListPage(),
     );
   }
 }
