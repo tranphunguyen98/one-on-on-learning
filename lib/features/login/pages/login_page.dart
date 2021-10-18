@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:one_on_one_learning/core/core.dart';
+import 'package:one_on_one_learning/core/widgets/widget_core_app_bar.dart';
 import 'package:one_on_one_learning/core/widgets/widget_logo_text.dart';
 import 'package:one_on_one_learning/core/widgets/widget_rounded_button.dart';
 import 'package:one_on_one_learning/core/widgets/widget_rounded_text_field_with_title.dart';
@@ -12,18 +13,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kWhiteColor,
-      appBar: AppBar(
-        backgroundColor: kWhiteColor,
-        elevation: 0,
-        leading: Icon(
-          Icons.arrow_back_ios_rounded,
-          color: kBlackColor,
-        ),
-        title: Text(
-          'Đăng nhập',
-          style: kFontSemiboldBlack_16,
-        ),
-      ),
+      appBar: widgetCoreAppBar(title: 'Đăng nhập'),
       body: Padding(
         padding: const EdgeInsets.all(32.0),
         child: Column(

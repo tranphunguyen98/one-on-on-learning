@@ -4,13 +4,15 @@ import 'package:one_on_one_learning/core/widgets/widget_rounded_text_field.dart'
 
 class WidgetRoundedTextFieldWithTitle extends StatelessWidget {
   final String title;
-  final String? hint;
   final bool isRequired;
+  final String? hint;
+  final double? radius;
   const WidgetRoundedTextFieldWithTitle({
     Key? key,
     required this.title,
     this.hint,
     this.isRequired = false,
+    this.radius,
   }) : super(key: key);
 
   @override
@@ -25,6 +27,7 @@ class WidgetRoundedTextFieldWithTitle extends StatelessWidget {
         SizedBox(height: 8),
         WidgetRoundedTextField(
           hint: hint,
+          radius: radius,
         ),
       ],
     );
