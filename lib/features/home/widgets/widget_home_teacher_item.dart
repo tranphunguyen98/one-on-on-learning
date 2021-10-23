@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:one_on_one_learning/core/core.dart';
+import 'package:one_on_one_learning/core/widgets/widget_favorite.dart';
+import 'package:one_on_one_learning/core/widgets/widget_rating_bar_indicator.dart';
 import 'package:one_on_one_learning/model/teacher.dart';
 
 class WidgetHomeTeacherItem extends StatelessWidget {
@@ -42,36 +43,10 @@ class WidgetHomeTeacherItem extends StatelessWidget {
                                 style: kFontRegularDefault_16,
                               ),
                               SizedBox(height: 4),
-                              RatingBarIndicator(
-                                rating: teacherModel.star,
-                                itemBuilder: (context, index) => Icon(
-                                  Icons.star,
-                                  color: Colors.amber,
-                                ),
-                                itemCount: 5,
-                                itemSize: 20.0,
-                                unratedColor: Colors.amber.withAlpha(50),
-                              ),
+                              WidgetRatingBarIndicator(star: teacherModel.star),
                             ],
                           ),
-                          SizedBox(
-                            height: 24,
-                            width: 24,
-                            child: IconButton(
-                              padding: EdgeInsets.zero,
-                              splashRadius: 24,
-                              icon: Icon(
-                                teacherModel.isFavorite
-                                    ? Icons.favorite
-                                    : Icons.favorite_border,
-                                color: teacherModel.isFavorite
-                                    ? kRedColor
-                                    : kPrimaryColor,
-                                size: 24,
-                              ),
-                              onPressed: () {},
-                            ),
-                          ),
+                          WidgetFavorite(isFavorite: teacherModel.isFavorite),
                         ],
                       ),
                       SizedBox(height: 8),

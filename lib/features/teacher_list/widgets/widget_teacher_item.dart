@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:one_on_one_learning/core/core.dart';
+import 'package:one_on_one_learning/core/widgets/widget_chip.dart';
 import 'package:one_on_one_learning/model/teacher.dart';
 
 class WidgetTeacherItem extends StatelessWidget {
@@ -57,13 +58,7 @@ class WidgetTeacherItem extends StatelessWidget {
                           itemCount: teacherModel.fields.length,
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (context, index) {
-                            return Chip(
-                              backgroundColor: kBlueColor.withOpacity(0.2),
-                              label: Text(
-                                teacherModel.fields[index],
-                                style: kFontRegularBlue_12,
-                              ),
-                            );
+                            return WidgetChip(text: teacherModel.fields[index]);
                           },
                           separatorBuilder: (context, index) =>
                               SizedBox(width: 4),
