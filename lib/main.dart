@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'features/teacher_detail/pages/teacher_detail_page.dart';
+import 'features/message/message_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: TeacherDetailPage(),
+      home: MessagePage(),
     );
   }
 }
