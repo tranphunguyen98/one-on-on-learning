@@ -3,7 +3,8 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class WidgetRatingBarIndicator extends StatelessWidget {
   final double star;
-  const WidgetRatingBarIndicator({Key? key, required this.star})
+  final double? itemSize;
+  const WidgetRatingBarIndicator({Key? key, required this.star, this.itemSize})
       : super(key: key);
 
   @override
@@ -15,7 +16,7 @@ class WidgetRatingBarIndicator extends StatelessWidget {
         color: Colors.amber,
       ),
       itemCount: 5,
-      itemSize: 20.0,
+      itemSize: itemSize ?? 20.0,
       unratedColor: Colors.amber.withAlpha(50),
     );
   }

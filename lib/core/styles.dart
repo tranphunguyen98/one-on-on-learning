@@ -44,6 +44,7 @@ final kFontRegularBlue_12 = kFontRegularBlue.copyWith(fontSize: 12);
 final kFontRegularBlue_14 = kFontRegularBlue.copyWith(fontSize: 14);
 
 final kFontRegularGray = kFontRegular.copyWith(color: kGrayColor);
+final kFontRegularGray_10 = kFontRegularGray.copyWith(fontSize: 10);
 final kFontRegularGray_12 = kFontRegularGray.copyWith(fontSize: 12);
 final kFontRegularGray_14 = kFontRegularGray.copyWith(fontSize: 14);
 

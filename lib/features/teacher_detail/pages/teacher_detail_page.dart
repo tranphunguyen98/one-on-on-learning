@@ -6,7 +6,8 @@ import 'package:one_on_one_learning/core/widgets/widget_icon_text_column.dart';
 import 'package:one_on_one_learning/core/widgets/widget_rating_bar_indicator.dart';
 import 'package:one_on_one_learning/core/widgets/widget_rounded_button.dart';
 import 'package:one_on_one_learning/core/widgets/widget_video_player.dart';
-import 'package:one_on_one_learning/features/teacher_detail/report_dialog.dart';
+import 'package:one_on_one_learning/features/teacher_detail/widgets/report_dialog.dart';
+import 'package:one_on_one_learning/features/teacher_detail/widgets/review_tutor_list.dart';
 import 'package:one_on_one_learning/model/teacher.dart';
 
 class TeacherDetailPage extends StatelessWidget {
@@ -51,11 +52,27 @@ class TeacherDetailPage extends StatelessWidget {
                 _widgetTitleTextColumn('Sở thích', teacherModel.hobby),
                 _widgetTitleTextColumn('Nghề nghiệp', teacherModel.career),
                 _widgetTitleChipsColumn('Chuyên môn', teacherModel.fields),
+                SizedBox(height: 16),
+                _widgetViewReview(),
               ],
             ),
           ),
         ],
       ),
+    );
+  }
+
+  Column _widgetViewReview() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Đánh giá và bình luận (5)',
+          style: kFontRegularPrimary_14,
+        ),
+        SizedBox(height: 16),
+        WidgetReviewTutorList(),
+      ],
     );
   }
 
