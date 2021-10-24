@@ -6,14 +6,17 @@ import 'package:one_on_one_learning/core/widgets/widget_icon_text_column.dart';
 import 'package:one_on_one_learning/core/widgets/widget_rating_bar_indicator.dart';
 import 'package:one_on_one_learning/core/widgets/widget_rounded_button.dart';
 import 'package:one_on_one_learning/core/widgets/widget_video_player.dart';
+import 'package:one_on_one_learning/features/teacher_detail/report_dialog.dart';
 import 'package:one_on_one_learning/model/teacher.dart';
 
 class TeacherDetailPage extends StatelessWidget {
   final TeacherModel teacherModel = TeacherModel.mock;
-  const TeacherDetailPage({Key? key}) : super(key: key);
+  TeacherDetailPage({Key? key}) : super(key: key);
 
+  late BuildContext _context;
   @override
   Widget build(BuildContext context) {
+    _context = context;
     return Scaffold(
       body: SafeArea(
         child: _buildBody(),
@@ -116,6 +119,7 @@ class TeacherDetailPage extends StatelessWidget {
         WidgetIconTextColumn(
           iconData: Icons.info,
           text: 'Báo cáo',
+          onTap: _showReportDialog,
         ),
         SizedBox(width: 64),
       ],
@@ -159,6 +163,15 @@ class TeacherDetailPage extends StatelessWidget {
           ],
         ),
       ],
+    );
+  }
+
+  void _showReportDialog() {
+    showDialog<void>(
+      context: _context,
+      builder: (BuildContext dialogContext) {
+        return ReportDialog(teacherName: teacherModel.name);
+      },
     );
   }
 }

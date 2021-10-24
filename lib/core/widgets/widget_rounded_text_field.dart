@@ -5,16 +5,19 @@ class WidgetRoundedTextField extends StatelessWidget {
   final String? hint;
   final String? validator;
   final double? radius;
+  final int? minLines;
   const WidgetRoundedTextField(
-      {Key? key, this.hint, this.validator, this.radius})
+      {Key? key, this.hint, this.validator, this.radius, this.minLines})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 48,
+      height: minLines != null ? 48.0 * minLines! : 48,
       child: TextFormField(
         style: kFontRegularDefault_14,
+        minLines: minLines,
+        maxLines: minLines,
         decoration: InputDecoration(
           hintText: hint,
           contentPadding: EdgeInsets.symmetric(
