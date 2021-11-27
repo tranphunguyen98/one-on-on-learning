@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:one_on_one_learning/core/core.dart';
 import 'package:one_on_one_learning/core/widgets/widget_chip.dart';
 import 'package:one_on_one_learning/core/widgets/widget_multi_line_text_field.dart';
+import 'package:one_on_one_learning/features/teacher_detail/widgets/widget_text_header.dart';
 
 class ReportDialog extends StatelessWidget {
   final String teacherName;
@@ -14,16 +15,7 @@ class ReportDialog extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              padding: EdgeInsets.all(16),
-              width: double.infinity,
-              color: Colors.grey.withOpacity(0.1),
-              alignment: Alignment.center,
-              child: Text(
-                'Báo cáo $teacherName',
-                style: kFontSemiboldBlack_16,
-              ),
-            ),
+            WidgetTextHeader(title: 'Báo cáo $teacherName'),
             SizedBox(height: 32),
             Text(
               'Bạn đang gặp phải vấn đề gì?',

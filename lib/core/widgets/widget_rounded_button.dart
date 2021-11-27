@@ -10,6 +10,7 @@ class WidgetRoundedButton extends StatelessWidget {
   final Alignment? alignment;
   final IconData? leading;
   final IconData? trailing;
+  final VoidCallback? onPressed;
 
   const WidgetRoundedButton(
       {Key? key,
@@ -20,7 +21,8 @@ class WidgetRoundedButton extends StatelessWidget {
       this.overlayColor,
       this.alignment,
       this.leading,
-      this.trailing})
+      this.trailing,
+      this.onPressed})
       : super(key: key);
 
   @override
@@ -40,11 +42,11 @@ class WidgetRoundedButton extends StatelessWidget {
             backgroundColor ?? kPrimaryColor,
           ),
           overlayColor: MaterialStateProperty.all<Color>(
-            overlayColor ?? kWhiteColor,
+            overlayColor ?? kGrayColor.withOpacity(0.4),
           ),
           alignment: alignment ?? Alignment.center,
         ),
-        onPressed: () {},
+        onPressed: onPressed,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

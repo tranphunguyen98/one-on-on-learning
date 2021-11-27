@@ -8,6 +8,7 @@ import 'package:one_on_one_learning/core/widgets/widget_rounded_button.dart';
 import 'package:one_on_one_learning/core/widgets/widget_video_player.dart';
 import 'package:one_on_one_learning/features/teacher_detail/widgets/report_dialog.dart';
 import 'package:one_on_one_learning/features/teacher_detail/widgets/review_tutor_list.dart';
+import 'package:one_on_one_learning/features/teacher_detail/widgets/widget_choose_date_bottom_sheet.dart';
 import 'package:one_on_one_learning/model/teacher.dart';
 
 class TeacherDetailPage extends StatelessWidget {
@@ -37,7 +38,14 @@ class TeacherDetailPage extends StatelessWidget {
               children: [
                 _widgetInfoHeader(),
                 SizedBox(height: 16),
-                WidgetRoundedButton(text: 'Đặt lịch ngay'),
+                Builder(
+                  builder: (context) {
+                    return WidgetRoundedButton(
+                      text: 'Đặt lịch ngay',
+                      onPressed: () => _showChooseDateBottomSheet(context),
+                    );
+                  },
+                ),
                 SizedBox(height: 16),
                 _widgetRowFunction(),
                 SizedBox(height: 24),
@@ -188,6 +196,21 @@ class TeacherDetailPage extends StatelessWidget {
       context: _context,
       builder: (BuildContext dialogContext) {
         return ReportDialog(teacherName: teacherModel.name);
+      },
+    );
+  }
+
+  void _showChooseDateBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(16),
+          topRight: Radius.circular(16),
+        ),
+      ),
+      builder: (context) {
+        return WidgetChooseDateBottomSheet();
       },
     );
   }
