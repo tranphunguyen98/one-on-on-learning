@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:one_on_one_learning/features/forgot_password/pages/forgot_password_page.dart';
 import 'package:one_on_one_learning/features/login/pages/login_page.dart';
 import 'package:one_on_one_learning/features/register/pages/register_page.dart';
 
@@ -26,8 +27,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => LoginPage());
       case kRegister:
         return MaterialPageRoute(builder: (_) => RegisterPage());
-      // case kForgotPassword:
-      //   return MaterialPageRoute(builder: (_) => ForgotPasswordScreen());
+      case kForgotPassword:
+        return MaterialPageRoute(builder: (_) => ForgotPasswordPage());
       // case kChangePassword:
       //   return MaterialPageRoute(builder: (_) => ChangePasswordScreen());
       // case kSetting:
