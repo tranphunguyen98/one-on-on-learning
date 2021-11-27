@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:one_on_one_learning/features/teacher_detail/pages/teacher_detail_page.dart';
+import 'package:one_on_one_learning/features/register/pages/register_page.dart';
+import 'package:one_on_one_learning/utils/router.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,6 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      onGenerateRoute: AppRouter.generateRoute,
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: TeacherDetailPage(),
+      home: RegisterPage(),
     );
   }
 }
