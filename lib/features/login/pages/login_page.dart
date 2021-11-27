@@ -16,7 +16,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kWhiteColor,
-      appBar: widgetCoreAppBar(title: 'Đăng nhập'),
+      appBar: widgetCoreAppBar(title: 'Đăng nhập', context: context),
       body: Padding(
         padding: const EdgeInsets.all(32.0),
         child: SingleChildScrollView(

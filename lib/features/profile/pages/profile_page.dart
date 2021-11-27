@@ -16,7 +16,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: widgetCoreAppBar(title: 'Hồ sơ'),
+      appBar: widgetCoreAppBar(title: 'Hồ sơ', context: context),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
@@ -45,11 +45,9 @@ class ProfilePage extends StatelessWidget {
                     radius: 8,
                   ),
                   SizedBox(height: 8),
-                  WidgetDropdownWithTitle(
-                      title: 'Quốc gia', hint: 'Chọn quốc gia', data: kNations),
+                  WidgetDropdownWithTitle(title: 'Quốc gia', hint: 'Chọn quốc gia', data: kNations),
                   SizedBox(height: 8),
-                  WidgetDropdownWithTitle(
-                      title: 'Trình độ', hint: 'Chọn trình độ', data: kLevels),
+                  WidgetDropdownWithTitle(title: 'Trình độ', hint: 'Chọn trình độ', data: kLevels),
                   SizedBox(height: 8),
                   WidgetDropdownWithTitle(
                     title: 'Muốn học',
