@@ -3,7 +3,9 @@ import 'package:one_on_one_learning/features/forgot_password/pages/forgot_passwo
 import 'package:one_on_one_learning/features/home/pages/home_page.dart';
 import 'package:one_on_one_learning/features/login/pages/login_page.dart';
 import 'package:one_on_one_learning/features/register/pages/register_page.dart';
+import 'package:one_on_one_learning/features/teacher_detail/pages/teacher_detail_page.dart';
 import 'package:one_on_one_learning/features/teacher_list/pages/teacher_list_page.dart';
+import 'package:one_on_one_learning/model/teacher.dart';
 
 class AppRouter {
   static const String kHome = '/home';
@@ -15,6 +17,7 @@ class AppRouter {
   static const String kForgotPassword = '/forgotPassword';
   static const String kSetting = '/setting';
   static const String kTeacherList = '/teacherList';
+  static const String kTeacherDetail = '/teacherDetail';
 
   static const String kArgumentTask = '/argumentTask';
 
@@ -34,6 +37,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => ForgotPasswordPage());
       case kTeacherList:
         return MaterialPageRoute(builder: (_) => TeacherListPage());
+      case kTeacherDetail:
+        return MaterialPageRoute(builder: (_) => TeacherDetailPage(teacherModel: settings.arguments as TeacherModel));
       // case kChangePassword:
       //   return MaterialPageRoute(builder: (_) => ChangePasswordScreen());
       // case kSetting:

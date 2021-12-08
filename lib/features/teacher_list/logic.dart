@@ -6,6 +6,7 @@ enum ETeacherFilter { Default, Favorite, Rating }
 class TeacherListController extends GetxController {
   ETeacherFilter teacherFilter = ETeacherFilter.Favorite;
   String specialize = '';
+  String keyword = '';
 
   List<TeacherModel> _teachers = [
     TeacherModel.mock,
@@ -31,6 +32,11 @@ class TeacherListController extends GetxController {
 
   void changeSpecialize(String specialize) {
     this.specialize = specialize;
+    updateTeacher();
+  }
+
+  void changeKeyword(String keyword) {
+    this.keyword = keyword.toLowerCase();
     updateTeacher();
   }
 
@@ -68,6 +74,13 @@ class TeacherListController extends GetxController {
       displayedTeachers = result;
     }
 
+    if (keyword.isNotEmpty) {
+      List<TeacherModel> result = [];
+      result.addAll(displayedTeachers);
+      result.removeWhere((element) =>
+          !element.name.toLowerCase().contains(keyword) && !element.nation.toLowerCase().contains(keyword));
+      displayedTeachers = result;
+    }
     update();
   }
 }

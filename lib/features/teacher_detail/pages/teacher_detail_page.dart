@@ -12,8 +12,8 @@ import 'package:one_on_one_learning/features/teacher_detail/widgets/widget_choos
 import 'package:one_on_one_learning/model/teacher.dart';
 
 class TeacherDetailPage extends StatelessWidget {
-  final TeacherModel teacherModel = TeacherModel.mock;
-  TeacherDetailPage({Key? key}) : super(key: key);
+  final TeacherModel teacherModel;
+  TeacherDetailPage({Key? key, required this.teacherModel}) : super(key: key);
 
   late BuildContext _context;
   @override
