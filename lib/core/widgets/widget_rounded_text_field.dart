@@ -8,6 +8,7 @@ class WidgetRoundedTextField extends StatelessWidget {
   final int? minLines;
   final TextEditingController? controller;
   final bool obscureText;
+  final TextInputType? textInputType;
 
   const WidgetRoundedTextField({
     Key? key,
@@ -17,6 +18,7 @@ class WidgetRoundedTextField extends StatelessWidget {
     this.minLines,
     this.controller,
     this.obscureText = false,
+    this.textInputType,
   }) : super(key: key);
 
   @override
@@ -42,6 +44,7 @@ class WidgetRoundedTextField extends StatelessWidget {
           autovalidateMode: AutovalidateMode.onUserInteraction,
           validator: validator,
           obscureText: obscureText,
+          keyboardType: textInputType,
           decoration: InputDecoration(
             hintText: hint,
             contentPadding: EdgeInsets.symmetric(horizontal: radius != null ? 16 : 24, vertical: 8),

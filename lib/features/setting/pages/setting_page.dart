@@ -4,10 +4,17 @@ import 'package:one_on_one_learning/core/widgets/widget_core_app_bar.dart';
 import 'package:one_on_one_learning/core/widgets/widget_rounded_button.dart';
 import 'package:one_on_one_learning/features/setting/widgets/widget_setting_button.dart';
 import 'package:one_on_one_learning/model/user.dart';
+import 'package:one_on_one_learning/utils/router.dart';
 
-class SettingPage extends StatelessWidget {
-  final UserModel userModel = UserModel.mock;
+class SettingPage extends StatefulWidget {
   SettingPage({Key? key}) : super(key: key);
+
+  @override
+  _SettingPageState createState() => _SettingPageState();
+}
+
+class _SettingPageState extends State<SettingPage> {
+  final UserModel userModel = UserModel.mock;
 
   @override
   Widget build(BuildContext context) {
@@ -57,29 +64,34 @@ class SettingPage extends StatelessWidget {
     );
   }
 
-  Row _widgetHeader() {
-    return Row(
-      children: [
-        CircleAvatar(
-          backgroundImage: NetworkImage(userModel.imageUrl ?? ''),
-          radius: 28,
-        ),
-        SizedBox(width: 16),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              userModel.name,
-              style: kFontRegularDefault_16,
-            ),
-            SizedBox(height: 8),
-            Text(
-              userModel.email,
-              style: kFontRegularDefault_14,
-            ),
-          ],
-        )
-      ],
+  Widget _widgetHeader() {
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, AppRouter.kUserProfile);
+      },
+      child: Row(
+        children: [
+          CircleAvatar(
+            backgroundImage: NetworkImage(userModel.imageUrl ?? ''),
+            radius: 28,
+          ),
+          SizedBox(width: 16),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                userModel.name,
+                style: kFontRegularDefault_16,
+              ),
+              SizedBox(height: 8),
+              Text(
+                userModel.email,
+                style: kFontRegularDefault_14,
+              ),
+            ],
+          )
+        ],
+      ),
     );
   }
 }
