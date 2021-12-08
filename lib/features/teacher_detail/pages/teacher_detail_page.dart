@@ -54,7 +54,7 @@ class TeacherDetailPage extends StatelessWidget {
                   style: kFontRegularDefault_14,
                 ),
                 SizedBox(height: 8),
-                _widgetTitleChipsColumn('Ngôn ngữ', [teacherModel.language]),
+                _widgetTitleChipsColumn('Ngôn ngữ', teacherModel.languages),
                 _widgetTitleTextColumn('Học vấn', teacherModel.education),
                 _widgetTitleTextColumn('Kinh nghiêm', teacherModel.experience),
                 _widgetTitleTextColumn('Sở thích', teacherModel.hobby),

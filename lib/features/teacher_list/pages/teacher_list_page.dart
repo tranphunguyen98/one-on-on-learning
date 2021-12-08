@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:one_on_one_learning/core/colors.dart';
+import 'package:one_on_one_learning/core/core.dart';
 import 'package:one_on_one_learning/core/widgets/widget_radio_row_group.dart';
 import 'package:one_on_one_learning/core/widgets/widget_search_text_field.dart';
 import 'package:one_on_one_learning/features/home/widgets/widget_home_teacher_item.dart';
@@ -68,7 +69,12 @@ class TeacherListPage extends StatelessWidget {
           height: 36,
           margin: const EdgeInsets.symmetric(horizontal: 16),
           width: double.infinity,
-          child: WidgetRadioRowGroup(data: categoryList),
+          child: WidgetRadioRowGroup(
+            data: categoryList,
+            onValueChanged: (value) {
+              controller.changeSpecialize(value != 'All' ? value : '');
+            },
+          ),
         ),
         Expanded(child: _buildListOfTeacher()),
       ],
@@ -79,6 +85,14 @@ class TeacherListPage extends StatelessWidget {
     return GetBuilder<TeacherListController>(
         init: controller,
         builder: (logic) {
+          if (logic.displayedTeachers.isEmpty) {
+            return Center(
+              child: Text(
+                'Không có giáo viên nào',
+                style: kFontSemiboldBlack_16,
+              ),
+            );
+          }
           return Padding(
             padding: const EdgeInsets.all(16.0),
             child: SingleChildScrollView(
