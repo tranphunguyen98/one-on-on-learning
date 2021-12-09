@@ -3,6 +3,7 @@ import 'package:one_on_one_learning/features/favorite_teacher/pages/favorite_tea
 import 'package:one_on_one_learning/features/forgot_password/pages/forgot_password_page.dart';
 import 'package:one_on_one_learning/features/home/pages/home_page.dart';
 import 'package:one_on_one_learning/features/login/pages/login_page.dart';
+import 'package:one_on_one_learning/features/message/message_page.dart';
 import 'package:one_on_one_learning/features/profile/pages/profile_page.dart';
 import 'package:one_on_one_learning/features/register/pages/register_page.dart';
 import 'package:one_on_one_learning/features/teacher_detail/pages/teacher_detail_page.dart';
@@ -22,6 +23,7 @@ class AppRouter {
   static const String kTeacherDetail = '/teacherDetail';
   static const String kTeacherFavorite = '/teacherFavorite';
   static const String kUserProfile = '/userProfile';
+  static const String kMessage = '/message';
 
   static const String kArgumentTask = '/argumentTask';
 
@@ -47,6 +49,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => ProfilePage());
       case kTeacherFavorite:
         return MaterialPageRoute(builder: (_) => FavoriteTeacherPage());
+      case kMessage:
+        return MaterialPageRoute(builder: (_) => MessagePage());
       // case kChangePassword:
       //   return MaterialPageRoute(builder: (_) => ChangePasswordScreen());
       // case kSetting:
