@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:one_on_one_learning/features/favorite_teacher/pages/favorite_teacher_page.dart';
 import 'package:one_on_one_learning/features/forgot_password/pages/forgot_password_page.dart';
-import 'package:one_on_one_learning/features/home/pages/home_page.dart';
 import 'package:one_on_one_learning/features/login/pages/login_page.dart';
 import 'package:one_on_one_learning/features/message/message_page.dart';
 import 'package:one_on_one_learning/features/profile/pages/profile_page.dart';
 import 'package:one_on_one_learning/features/register/pages/register_page.dart';
+import 'package:one_on_one_learning/features/root_page.dart';
 import 'package:one_on_one_learning/features/teacher_detail/pages/teacher_detail_page.dart';
 import 'package:one_on_one_learning/features/teacher_list/pages/teacher_list_page.dart';
 import 'package:one_on_one_learning/model/teacher.dart';
@@ -34,7 +34,7 @@ class AppRouter {
       // case kLoading:
       //   return MaterialPageRoute(builder: (_) => LoadingScreen());
       case kHome:
-        return MaterialPageRoute(builder: (_) => HomePage());
+        return MaterialPageRoute(builder: (_) => RootPage());
       case kLogin:
         return MaterialPageRoute(builder: (_) => LoginPage());
       case kRegister:
