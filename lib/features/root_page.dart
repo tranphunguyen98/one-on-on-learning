@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:one_on_one_learning/core/styles.dart';
 import 'package:one_on_one_learning/features/home/pages/home_page.dart';
 import 'package:one_on_one_learning/features/setting/pages/setting_page.dart';
+import 'package:one_on_one_learning/features/teacher_list/logic.dart';
 import 'package:one_on_one_learning/features/teacher_list/pages/teacher_list_page.dart';
 
 class RootPage extends StatefulWidget {
@@ -13,6 +15,8 @@ class _RootPageState extends State<RootPage> {
   int selectedIndex = 0;
   late Widget currentPage = HomePage();
   late String title = 'Trang chủ';
+
+  final controller = Get.put(TeacherListController());
 
   @override
   Widget build(BuildContext context) {
@@ -35,11 +39,10 @@ class _RootPageState extends State<RootPage> {
           } else if (selectedIndex == 3) {
             currentPage = TeacherListPage();
             title = 'Danh sách tutor';
-          } else if(selectedIndex == 4) {
-          currentPage = SettingPage();
-          title = 'Cài đặt';
+          } else if (selectedIndex == 4) {
+            currentPage = SettingPage();
+            title = 'Cài đặt';
           }
-
         },
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Trang chủ'),

@@ -19,7 +19,7 @@ class TeacherListPage extends StatelessWidget {
     'English for Adults4',
   ];
 
-  final controller = Get.put(TeacherListController());
+  TeacherListController controller = Get.find<TeacherListController>();
 
   @override
   Widget build(BuildContext context) {
