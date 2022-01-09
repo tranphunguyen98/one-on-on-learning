@@ -49,8 +49,11 @@ class RegisterPage extends StatelessWidget {
                       onPressed: () async {
                         if (_formKey.currentState?.validate() ?? false) {
                           try {
-                            await registerController.register(emailController.text, passwordController.text);
-                            Navigator.of(context).pushReplacementNamed(AppRouter.kHome);
+                            final user =
+                                await registerController.register(emailController.text, passwordController.text);
+                            Navigator.of(context).pushReplacementNamed(AppRouter.kLogin, arguments: {
+                              'email': user.email,
+                            });
                           } on ServerFailure catch (e) {
                             _showToast(context, e.message);
                           }
@@ -84,13 +87,11 @@ class RegisterPage extends StatelessWidget {
               ),
             ),
             if (logic.isLoading)
-              Positioned.fill(
-                child: Container(
-                  color: kBlackColor.withOpacity(0.2),
-                  child: Center(
-                    child: CircularProgressIndicator(
-                      color: kPrimaryColor,
-                    ),
+              Container(
+                color: kBlackColor.withOpacity(0.2),
+                child: Center(
+                  child: CircularProgressIndicator(
+                    color: kPrimaryColor,
                   ),
                 ),
               )
@@ -162,7 +163,7 @@ class RegisterPage extends StatelessWidget {
     scaffold.showSnackBar(
       SnackBar(
         content: Text(text),
-        duration: Duration(milliseconds: 600),
+        duration: Duration(milliseconds: 1000),
       ),
     );
   }

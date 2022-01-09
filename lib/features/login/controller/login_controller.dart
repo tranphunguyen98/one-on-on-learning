@@ -1,22 +1,22 @@
 import 'package:get/get.dart';
 import 'package:one_on_one_learning/core/base_api.dart';
-import 'package:one_on_one_learning/features/register/data/register_response.dart';
+import 'package:one_on_one_learning/features/login/data/login_reponse.dart';
 import 'package:one_on_one_learning/model/user.dart';
 
-class RegisterController extends GetxController {
+class LoginController extends GetxController {
   bool isLoading = false;
 
-  Future<UserModel> register(String email, String password) async {
+  Future<UserModel> login(String email, String password) async {
     isLoading = true;
     update();
 
     try {
-      final response = await BaseApi().post('/auth/register', {
+      final response = await BaseApi().post('/auth/login', {
         'email': email,
         'password': password,
       });
 
-      final registerResponse = RegisterResponse.fromJson(response);
+      final registerResponse = LoginResponse.fromJson(response);
       final user = registerResponse.user;
       final token = registerResponse.tokens;
 
