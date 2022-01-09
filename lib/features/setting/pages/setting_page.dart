@@ -77,7 +77,7 @@ class _SettingPageState extends State<SettingPage> {
       child: Row(
         children: [
           CircleAvatar(
-            backgroundImage: NetworkImage(userModel.imageUrl ?? ''),
+            backgroundImage: NetworkImage(userModel.avatar ?? ''),
             radius: 28,
           ),
           SizedBox(width: 16),
