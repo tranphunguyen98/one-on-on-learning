@@ -12,7 +12,7 @@ class RootPage extends StatefulWidget {
 }
 
 class _RootPageState extends State<RootPage> {
-  int selectedIndex = 0;
+  int selectedIndex = 3;
   late Widget currentPage = HomePage();
   late String title = 'Trang chủ';
 

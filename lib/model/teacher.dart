@@ -1,7 +1,5 @@
-import 'dart:math';
-
 class TeacherModel {
-  final int id;
+  final String id;
   final double star;
   final List<String> fields;
   final String name;
@@ -15,7 +13,7 @@ class TeacherModel {
   final List<String> languages;
   final bool isFavorite;
 
-  const TeacherModel({
+  TeacherModel({
     required this.id,
     required this.star,
     required this.fields,
@@ -32,7 +30,7 @@ class TeacherModel {
   });
 
   static TeacherModel mock = TeacherModel(
-    id: Random().nextInt(10000),
+    id: '1',
     star: 5,
     fields: [
       'English for Adults1',
@@ -55,7 +53,7 @@ class TeacherModel {
     languages: ['English', 'French', 'Vietnamese'],
   );
   static TeacherModel mock1 = TeacherModel(
-    id: Random().nextInt(10000),
+    id: '2',
     star: 4,
     fields: [
       'English for Kids',
@@ -80,7 +78,7 @@ class TeacherModel {
   );
 
   static TeacherModel mock2 = TeacherModel(
-    id: Random().nextInt(10000),
+    id: '3',
     star: 3,
     fields: [
       'English for Adults1',
@@ -104,7 +102,7 @@ class TeacherModel {
   );
 
   TeacherModel copyWith({
-    int? id,
+    String? id,
     double? star,
     List<String>? fields,
     String? name,

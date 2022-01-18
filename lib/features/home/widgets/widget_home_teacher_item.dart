@@ -71,7 +71,7 @@ class WidgetHomeTeacherItem extends StatelessWidget {
                               ),
                             );
                           },
-                          separatorBuilder: (context, index) => SizedBox(width: 4),
+                          separatorBuilder: (context, index) => SizedBox(width: 2),
                         ),
                       ),
                     ],

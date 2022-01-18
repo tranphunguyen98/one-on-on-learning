@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:one_on_one_learning/core/base_api.dart';
 import 'package:one_on_one_learning/features/login/data/login_reponse.dart';
+import 'package:one_on_one_learning/features/root_controller.dart';
 import 'package:one_on_one_learning/model/user.dart';
 
 class LoginController extends GetxController {
@@ -20,7 +21,7 @@ class LoginController extends GetxController {
       final user = registerResponse.user;
       final token = registerResponse.tokens;
 
-      return UserModel(
+      final userModel = UserModel(
         dateOfBirth: user?.birthday ?? '',
         email: user?.email ?? '',
         id: user?.id ?? '',
@@ -28,6 +29,10 @@ class LoginController extends GetxController {
         avatar: user?.avatar ?? '',
         accessToken: token?.access?.token ?? '',
       );
+
+      Get.find<RootController>().user = userModel;
+
+      return userModel;
     } catch (e) {
       isLoading = false;
       update();

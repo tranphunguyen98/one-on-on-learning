@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:one_on_one_learning/features/register/pages/register_page.dart';
+import 'package:get/get.dart';
+import 'package:one_on_one_learning/features/login/pages/login_page.dart';
+import 'package:one_on_one_learning/features/root_controller.dart';
 import 'package:one_on_one_learning/utils/router.dart';
 
 void main() {
@@ -8,6 +10,8 @@ void main() {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+  final RootController rootController = Get.put(RootController());
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,7 +29,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: RegisterPage(),
+      home: LoginPage(),
     );
   }
 }
